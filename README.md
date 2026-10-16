@@ -1,39 +1,38 @@
 # 🌍 Earthquake Magnitude Prediction
 
-A simple Machine Learning project to estimate earthquake **magnitude** using historical earthquake data.
+A simple Machine Learning project to estimate earthquake **magnitude** using historical earthquake data
 
-We compare **Linear Regression** and **Gradient Boosting** in a supervised learning **regression** task. This is an educational project, **not an earthquake early warning or forecasting system**.
+We compare four models: **Linear Regression**, **Decision Tree**, **Random Forest**, and **Gradient Boosting**
 
-**Dataset:** [USGS Earthquake Database on Kaggle](https://www.kaggle.com/datasets/usgs/earthquake-database) — significant earthquakes, 1965–2016.
+This is a supervised learning **Regression** project, not an earthquake early warning or forecasting system
 
 ## Project Overview
 
-- **Features (X):** Year, Month, Latitude, Longitude, Depth
+- **Features (x):** Year, Month, Latitude, Longitude, Depth
 - **Target (y):** Magnitude
-- **Models:** Linear Regression, Gradient Boosting Regressor
+- **Models:** Linear Regression, Decision Tree Regressor, Random Forest Regressor, Gradient Boosting Regressor
 - **Metrics:** MAE, RMSE, R²
 
 ## Workflow
 
 Data Exploration (EDA) → Data Preparation → Train/Test Split → Model Training → Evaluation → Visualization
 
-## How to Run
-
-1. Download or clone the repository.
-2. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Place `database.csv` in the same folder as the notebook.
-4. Open `Earthquake_Magnitude_Prediction.ipynb` in Jupyter Notebook and run all cells.
-
 ## Results
 
-In our initial notebook evaluation, Gradient Boosting performed slightly better than Linear Regression, but predictive performance was limited (R² around **0.06**). The date, location and depth features alone do not allow reliable prediction of earthquake magnitude.
+| Model | MAE | RMSE | R² |
+|---|---:|---:|---:|
+| Linear Regression | 0.314 | 0.422 | 0.004 |
+| Decision Tree | 0.303 | 0.413 | 0.047 |
+| **Random Forest** | **0.300** | **0.410** | **0.062** |
+| Gradient Boosting | 0.301 | 0.410 | 0.058 |
+
+**Random Forest** performed slightly better than the other models
+
+However, the low R² score shows that the models have limited predictive power. More geological and seismic data would be needed for more reliable predictions
 
 ## Data Source & Inspiration
 
-- [USGS Earthquake Database (Kaggle)](https://www.kaggle.com/datasets/usgs/earthquake-database)
+- [USGS Earthquake Database (Kaggle)](https://www.kaggle.com/datasets/usgs/earthquake-database) - significant earthquakes, 1965–2016.
 - [Aman Kharwal — Earthquake Prediction Model with Machine Learning](https://amanxai.com/2020/11/12/earthquake-prediction-model-with-machine-learning/)
 
-*Note: The dataset is historical. Reported test scores come from a random train/test split, not a future-earthquake forecasting evaluation.*
+*Note: The dataset is historical
